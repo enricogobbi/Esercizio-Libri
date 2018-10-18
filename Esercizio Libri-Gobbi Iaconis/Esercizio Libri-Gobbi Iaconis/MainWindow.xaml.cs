@@ -38,6 +38,19 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             //newLibri.Save(Indirizzo nuovo)
         }
 
+        private void btnElenco_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        private void btnTitAut_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnLibri_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

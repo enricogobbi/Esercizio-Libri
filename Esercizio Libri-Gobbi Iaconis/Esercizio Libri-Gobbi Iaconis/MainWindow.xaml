@@ -10,6 +10,13 @@
         <TextBox x:Name="txt_Path" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="692"/>
         <Label Content="Indirizzo File Da Convertire:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btn_Converti" Content="Converti" HorizontalAlignment="Left" Margin="707,41,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btn_Converti_Click"/>
+        <Button x:Name="btnElenco" Content="Elenco Completo Libri" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top" Width="245" Height="39" FontSize="20" Click="btnElenco_Click"/>
+        <Button x:Name="btnTitAut" Content="Cerca Titoli e Autori" HorizontalAlignment="Left" Margin="190,207,0,0" VerticalAlignment="Top" Width="123" Height="23" Click="btnTitAut_Click"/>
+        <Button x:Name="btnLibri" Content="Cerca" HorizontalAlignment="Left" Margin="216,308,0,0" VerticalAlignment="Top" Width="75" Height="26" Click="btnLibri_Click"/>
+        <Label Content="Numero dei libri pubblicati dal 2011" HorizontalAlignment="Left" Margin="10,308,0,0" VerticalAlignment="Top"/>
+        <Label Content="Keyword:" HorizontalAlignment="Left" Margin="10,203,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtKeyword" HorizontalAlignment="Left" Height="23" Margin="75,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
+        <ListBox HorizontalAlignment="Left" Height="292" Margin="371,98,0,0" VerticalAlignment="Top" Width="331"/>
 
     </Grid>
 </Window>

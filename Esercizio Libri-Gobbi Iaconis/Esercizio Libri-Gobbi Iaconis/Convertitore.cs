@@ -12,11 +12,18 @@ namespace Esercizio_Libri_Gobbi_Iaconis
     {
         public static XDocument Converti(string path)
         {
-            XDocument newDoc = null;
+            XDocument newDoc;
 
             XDocument libriDoc = XDocument.Load(@path);
+            newDoc = new XDocument(new XDeclaration("1.0", "utf-8", "yes"));
 
-            //Ricerca dei vari campi all'interno del file XML libri.xml
+            //Query titolo primo libro
+            IEnumerable<string> titolo =    from libri in libriDoc.Descendants("wiride")
+                                            select libri.Element("titolo").Element("proprio").Value;
+
+            //IEnumerable<string> titolo = from libri in libriDoc.Descendants("wiride")
+            //                             where libri.Element("codice_scheda").Value == "M-FKB0GR01"
+            //                             select libri.Element("titolo").Element("proprio").Value;
 
             return newDoc;
         }

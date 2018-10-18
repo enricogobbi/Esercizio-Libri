@@ -16,7 +16,7 @@
         <Label Content="Numero dei libri pubblicati dal 2011" HorizontalAlignment="Left" Margin="10,308,0,0" VerticalAlignment="Top"/>
         <Label Content="Keyword:" HorizontalAlignment="Left" Margin="10,203,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtKeyword" HorizontalAlignment="Left" Height="23" Margin="75,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
-        <ListBox HorizontalAlignment="Left" Height="292" Margin="371,98,0,0" VerticalAlignment="Top" Width="331"/>
+        <ListBox x:Name="lstElenco" HorizontalAlignment="Left" Height="292" Margin="371,98,0,0" VerticalAlignment="Top" Width="331"/>
 
     </Grid>
 </Window>

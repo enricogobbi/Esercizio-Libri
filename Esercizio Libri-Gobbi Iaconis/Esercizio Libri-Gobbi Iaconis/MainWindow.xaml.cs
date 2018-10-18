@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -40,7 +41,14 @@ namespace Esercizio_Libri_Gobbi_Iaconis
 
         private void btnElenco_Click(object sender, RoutedEventArgs e)
         {
+            XDocument xmlLibri = XDocument.Parse(File.ReadAllText(@".....", System.Text.Encoding.UTF8), LoadOptions.None); //da aggiungere percorso
 
+            IEnumerable<string> titles = from libri in xmlLibri.Descendants("wiride")
+                                        where libri.Element("barcode").Value == "M-FKB0GR01"
+                                        select libri.Element("titolo").Element("").Value; //element?
+
+            foreach (string titoli in titles)
+                MessageBox.Show(titoli);
         }
 
         private void btnTitAut_Click(object sender, RoutedEventArgs e)

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Esercizio_Libri_Gobbi_Iaconis
 {
@@ -24,5 +26,18 @@ namespace Esercizio_Libri_Gobbi_Iaconis
         {
             InitializeComponent();
         }
+
+        private void btn_Converti_Click(object sender, RoutedEventArgs e)
+        {
+            XDocument newLibri;
+
+            //Conversione del documento
+            newLibri = Convertitore.Converti(txt_Path.Text);
+
+            //Salvataggio sul nuovo documento
+            //newLibri.Save(Indirizzo nuovo)
+        }
+
+
     }
 }

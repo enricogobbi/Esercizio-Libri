@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TextBox x:Name="txt_Path" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="692"/>
+        <Label Content="Indirizzo File Da Convertire:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_Converti" Content="Converti" HorizontalAlignment="Left" Margin="707,41,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btn_Converti_Click"/>
+
     </Grid>
 </Window>

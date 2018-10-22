@@ -67,25 +67,9 @@ namespace Esercizio_Libri_Gobbi_Iaconis
 #line hidden
 
 
-#line 14 "..\..\MainWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnTitAut;
-
-#line default
-#line hidden
-
-
 #line 15 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnLibri;
-
-#line default
-#line hidden
-
-
-#line 18 "..\..\MainWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBox txtKeyword;
 
 #line default
 #line hidden
@@ -170,6 +154,16 @@ namespace Esercizio_Libri_Gobbi_Iaconis
         }
 
         internal System.Windows.Controls.ListBox lstElenco;
+        internal System.Windows.Controls.Button btnTitoli;
+        internal System.Windows.Controls.Label lblCopie;
+        internal System.Windows.Controls.TextBox txtAutore;
+        internal System.Windows.Controls.TextBox txtLibro;
+        internal System.Windows.Controls.Label lblTitRom;
+        internal System.Windows.Controls.Button btnDeleteAbstract;
+        internal System.Windows.Controls.Button btnGenere;
+        internal System.Windows.Controls.TextBox txtGenere;
+        internal System.Windows.Controls.TextBox txtLibriGen;
+        internal System.Windows.Controls.Button btnLibriShort;
     }
 }
 

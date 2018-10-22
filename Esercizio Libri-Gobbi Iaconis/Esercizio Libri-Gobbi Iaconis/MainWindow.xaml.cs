@@ -51,12 +51,22 @@ namespace Esercizio_Libri_Gobbi_Iaconis
                 MessageBox.Show(titoli);
         }
 
-        private void btnTitAut_Click(object sender, RoutedEventArgs e)
+        private void btnTitoli_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnLibri_Click(object sender, RoutedEventArgs e)
+        private void btnCopie_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnGenere_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnLibriShort_Click(object sender, RoutedEventArgs e)
         {
 
         }

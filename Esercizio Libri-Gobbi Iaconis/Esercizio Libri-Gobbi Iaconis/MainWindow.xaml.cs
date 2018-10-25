@@ -41,29 +41,52 @@ namespace Esercizio_Libri_Gobbi_Iaconis
 
         private void btnElenco_Click(object sender, RoutedEventArgs e)
         {
-            XDocument xmlLibri = XDocument.Parse(File.ReadAllText(@".....", System.Text.Encoding.UTF8), LoadOptions.None); //da aggiungere percorso
+            XDocument xmlLibri = XDocument.Parse(File.ReadAllText(@"C:\Users\enrico.gobbi\Desktop\Esercizio-Libri\libri.xml", System.Text.Encoding.UTF8), LoadOptions.None);
 
             IEnumerable<string> titles = from libri in xmlLibri.Descendants("wiride")
-                                        where libri.Element("barcode").Value == "M-FKB0GR01"
-                                        select libri.Element("titolo").Element("").Value; //element?
+                                         select libri.Element("titolo").Value; //element?
 
+            lstElenco.Items.Clear();
             foreach (string titoli in titles)
-                MessageBox.Show(titoli);
+                lstElenco.Items.Add(titoli);
         }
 
         private void btnTitoli_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("TEST");
+            string autore = txtAutore.Text;
+
+            XDocument xmlLibri = XDocument.Parse(File.ReadAllText(@"C:\Users\enrico.gobbi\Desktop\Esercizio-Libri\libri.xml", System.Text.Encoding.UTF8), LoadOptions.None);
+
+            IEnumerable<string> titles = from libri in xmlLibri.Descendants("wiride")
+                                         where libri.Element("autore").Element("nome").Value + " " + libri.Element("autore").Element("cognome").ToString().ToLower() == autore.ToLower()
+                                         select libri.Element("titolo").Value;
+
+            lstElenco.Items.Clear();
+            foreach (string titoli in titles)
+                lstElenco.Items.Add(titoli);
         }
 
         private void btnCopie_Click(object sender, RoutedEventArgs e)
         {
-
+            string libro = txtLibro.Text;
         }
 
         private void btnGenere_Click(object sender, RoutedEventArgs e)
         {
+            int n = 0;
+            string genere = txtGenere.Text;
 
+            XDocument xmlLibri = XDocument.Parse(File.ReadAllText(@"C:\Users\enrico.gobbi\Desktop\Esercizio-Libri\libri.xml", System.Text.Encoding.UTF8), LoadOptions.None);
+
+            IEnumerable<string> romanzo = from libri in xmlLibri.Descendants("wiride")
+                                         where libri.Element("genere").ToString().ToLower() == genere.ToLower()
+                                         select libri.Element("titolo").Value;
+
+            lstElenco.Items.Clear();
+            foreach (string numero in romanzo)
+                n++;
+
+            MessageBox.Show("Numero romanzi: " + n, "Numero di Romanzi");
         }
 
         private void btnLibriShort_Click(object sender, RoutedEventArgs e)

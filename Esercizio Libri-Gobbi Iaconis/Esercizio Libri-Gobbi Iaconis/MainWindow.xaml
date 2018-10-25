@@ -28,6 +28,7 @@
         <Label Content="Nuovo genere:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,282,0,0"/>
         <TextBox x:Name="txtGenere" HorizontalAlignment="Left" Height="23" Margin="303,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97"/>
         <Button x:Name="btnLibriShort" Content="Crea &quot;libriShort.txt&quot;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="208" Margin="150,403,0,0" Click="btnLibriShort_Click"/>
+        <Button x:Name="btnRomanzo" Content="Conta Romanzo" HorizontalAlignment="Left" Margin="283,237,0,0" VerticalAlignment="Top" Width="97" Height="23" Click="btnRomanzo_Click"/>
 
     </Grid>
 </Window>

@@ -43,7 +43,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
         {
             XDocument xmlLibri = XDocument.Parse(File.ReadAllText(@"C:\Users\enrico.gobbi\Desktop\Esercizio-Libri\libri.xml", System.Text.Encoding.UTF8), LoadOptions.None);
 
-            IEnumerable<string> titles = from libri in xmlLibri.Descendants("wiride")
+            IEnumerable<string> titles = from libri in xmlLibri.Elements("Biblioteca").Elements("wiride")
                                          select libri.Element("titolo").Value; //element?
 
             lstElenco.Items.Clear();
@@ -57,8 +57,9 @@ namespace Esercizio_Libri_Gobbi_Iaconis
 
             XDocument xmlLibri = XDocument.Parse(File.ReadAllText(@"C:\Users\enrico.gobbi\Desktop\Esercizio-Libri\libri.xml", System.Text.Encoding.UTF8), LoadOptions.None);
 
-            IEnumerable<string> titles = from libri in xmlLibri.Descendants("wiride")
-                                         where libri.Element("autore").Element("nome").Value + " " + libri.Element("autore").Element("cognome").ToString().ToLower() == autore.ToLower()
+            //Mettere a posto
+            IEnumerable<string> titles = from libri in xmlLibri.Elements("Biblioteca").Elements("wiride")
+                                         where (string)libri.Element("autore").Element("nome").Value/*.ToLower()*/ + " " + (string)libri.Element("autore").Element("cognome")/*.ToLower()*/ == autore/*.ToLower()*/
                                          select libri.Element("titolo").Value;
 
             lstElenco.Items.Clear();
@@ -73,25 +74,29 @@ namespace Esercizio_Libri_Gobbi_Iaconis
 
         private void btnGenere_Click(object sender, RoutedEventArgs e)
         {
-            int n = 0;
-            string genere = txtGenere.Text;
-
-            XDocument xmlLibri = XDocument.Parse(File.ReadAllText(@"C:\Users\enrico.gobbi\Desktop\Esercizio-Libri\libri.xml", System.Text.Encoding.UTF8), LoadOptions.None);
-
-            IEnumerable<string> romanzo = from libri in xmlLibri.Descendants("wiride")
-                                         where libri.Element("genere").ToString().ToLower() == genere.ToLower()
-                                         select libri.Element("titolo").Value;
-
-            lstElenco.Items.Clear();
-            foreach (string numero in romanzo)
-                n++;
-
-            MessageBox.Show("Numero romanzi: " + n, "Numero di Romanzi");
+            
         }
 
         private void btnLibriShort_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnRomanzo_Click(object sender, RoutedEventArgs e)
+        {
+            int n = 0;
+
+            XDocument xmlLibri = XDocument.Parse(File.ReadAllText(@"C:\Users\enrico.gobbi\Desktop\Esercizio-Libri\libri.xml", System.Text.Encoding.UTF8), LoadOptions.None);
+
+            IEnumerable<string> romanzo = from libri in xmlLibri.Elements("Biblioteca").Elements("wiride")
+                                          where (string)libri.Element("genere") == "romanzo"
+                                          select libri.Element("titolo").Value;
+
+            lstElenco.Items.Clear();
+            foreach (string numero in romanzo)
+                n++;
+
+            lblTitRom.Content = n.ToString();
         }
     }
 }

@@ -41,14 +41,13 @@ namespace Esercizio_Libri_Gobbi_Iaconis
 
         private void btnElenco_Click(object sender, RoutedEventArgs e)
         {
-            XDocument xmlLibri = XDocument.Parse(File.ReadAllText(@".....", System.Text.Encoding.UTF8), LoadOptions.None); //da aggiungere percorso
+            XDocument xmlLibri = XDocument.Parse(File.ReadAllText(@"C:\Users\enrico.gobbi\Desktop\Esercizio-Libri\libri.xml", System.Text.Encoding.UTF8), LoadOptions.None); //da aggiungere percorso
 
-            IEnumerable<string> titles = from libri in xmlLibri.Descendants("wiride")
-                                        where libri.Element("barcode").Value == "M-FKB0GR01"
-                                        select libri.Element("titolo").Element("").Value; //element?
+            IEnumerable<string> titles =    from libri in xmlLibri.Descendants("wiride")
+                                            select libri.Element("titolo").Value; //element?
 
             foreach (string titoli in titles)
-                MessageBox.Show(titoli);
+                lstElenco.Items.Add(titoli);
         }
 
         private void btnTitoli_Click(object sender, RoutedEventArgs e)
@@ -58,7 +57,9 @@ namespace Esercizio_Libri_Gobbi_Iaconis
 
         private void btnCopie_Click(object sender, RoutedEventArgs e)
         {
+            string libro = txtLibro.Text;
 
+            //IEnumerable<>
         }
 
         private void btnGenere_Click(object sender, RoutedEventArgs e)

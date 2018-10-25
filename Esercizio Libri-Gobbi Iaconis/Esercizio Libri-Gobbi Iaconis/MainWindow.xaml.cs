@@ -41,13 +41,16 @@ namespace Esercizio_Libri_Gobbi_Iaconis
 
         private void btnTitoli_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("TEST");
+            XDocument newAutori;
+            newAutori = XDocument.Load(txtAutore.Text);
+            lstElenco.Items.Clear();
+            lstElenco.Items.Add("gigi");//non completo
         }
 
         private void btnCopie_Click(object sender, RoutedEventArgs e)
         {
             string libro = txtLibro.Text;
-
+            
             //IEnumerable<>
         }
 
@@ -61,6 +64,14 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             XDocument newLibri;
             newLibri = XDocument.Load(txt_Path.Text);
             newLibri.Save(txtDestination.Text+"\\librishort.xml");
+        }
+
+        private void btnDeleteAbstract_Click(object sender, RoutedEventArgs e)
+        {
+            XDocument newLibri;
+            newLibri = XDocument.Load(txt_Path.Text);
+            newLibri.Root.> Elements().Where().FirstOrDefault().Remove(); //non completo
+            MessageBox.Show("tag abstract eliminato. DELETE!");
         }
     }
 }

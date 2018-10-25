@@ -20,7 +20,7 @@
         <TextBox x:Name="txtLibro" HorizontalAlignment="Left" Height="23" Margin="59,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
         <Label Content="Numero di libri di genere &quot;Romanzo&quot;:" HorizontalAlignment="Left" Margin="10,237,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblTitRom" Content="" HorizontalAlignment="Left" Margin="234,237,0,0" VerticalAlignment="Top" Width="21"/>
-        <Button x:Name="btnDeleteAbstract" Content="Elimina tag: &quot;abstract&quot;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="208" Margin="150,361,0,0"/>
+        <Button x:Name="btnDeleteAbstract" Content="Elimina tag: &quot;abstract&quot;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="208" Margin="150,361,0,0" Click="btnDeleteAbstract_Click"/>
         <Label Content="Libro:" HorizontalAlignment="Left" Margin="11,282,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,-0.577"/>
         <TextBox x:Name="txtLibriGen" HorizontalAlignment="Left" Height="23" Margin="59,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
         <Button x:Name="btnGenere" Content="Modifica Genere" HorizontalAlignment="Left" Margin="405,283,0,0" VerticalAlignment="Top" Width="99" Height="23" Click="btnGenere_Click"/>
@@ -28,7 +28,8 @@
         <TextBox x:Name="txtGenere" HorizontalAlignment="Left" Height="23" Margin="303,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97"/>
         <Button x:Name="btnLibriShort" Content="Crea &quot;libriShort.txt&quot;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="208" Margin="11,439,0,0" Click="btnLibriShort_Click"/>
         <Label Content="Nel seguente indirizzo:" HorizontalAlignment="Left" Margin="234,436,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtDestination" HorizontalAlignment="Left" Height="23" Margin="11,475,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="755"/>
+        <TextBox x:Name="txtDestination" HorizontalAlignment="Left" Height="23" Margin="11,475,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="605"/>
+        <Label Content="\librishort.xml" HorizontalAlignment="Left" Margin="630,475,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

@@ -70,8 +70,9 @@ namespace Esercizio_Libri_Gobbi_Iaconis
         {
             XDocument newLibri;
             newLibri = XDocument.Load(txt_Path.Text);
-            newLibri.Root.> Elements().Where().FirstOrDefault().Remove(); //non completo
+            newLibri.Root.>Element().Where().FirstOrDefault().Remove(); //non completo
             MessageBox.Show("tag abstract eliminato. DELETE!");
+            newLibri.Save(txt_Path.text); //probabilmente sbagliato SCUSA :(
         }
     }
 }

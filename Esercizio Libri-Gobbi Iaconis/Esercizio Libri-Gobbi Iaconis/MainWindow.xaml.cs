@@ -28,17 +28,6 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             InitializeComponent();
         }
 
-        private void btn_Converti_Click(object sender, RoutedEventArgs e)
-        {
-            XDocument newLibri;
-
-            //Conversione del documento
-            newLibri = Convertitore.Converti(txt_Path.Text);
-
-            //Salvataggio sul nuovo documento
-            //newLibri.Save(Indirizzo nuovo)
-        }
-
         private void btnElenco_Click(object sender, RoutedEventArgs e)
         {
             XDocument xmlLibri = XDocument.Parse(File.ReadAllText(@"C:\Users\enrico.gobbi\Desktop\Esercizio-Libri\libri.xml", System.Text.Encoding.UTF8), LoadOptions.None); //da aggiungere percorso
@@ -69,7 +58,9 @@ namespace Esercizio_Libri_Gobbi_Iaconis
 
         private void btnLibriShort_Click(object sender, RoutedEventArgs e)
         {
-
+            XDocument newLibri;
+            newLibri = XDocument.Load(txt_Path.Text);
+            newLibri.Save(txtDestination.Text+"\\librishort.xml");
         }
     }
 }

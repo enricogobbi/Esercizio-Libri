@@ -53,7 +53,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
 
         private void btnTitoli_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("TEST");
         }
 
         private void btnCopie_Click(object sender, RoutedEventArgs e)

@@ -43,3 +43,18 @@ C:\Users\matteo.iaconis\Desktop\Esercizio-Libri\Esercizio-Libri\Esercizio Libri-
 C:\Users\matteo.iaconis\Desktop\Esercizio-Libri\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\obj\Debug\Esercizio Libri-Gobbi Iaconis.csproj.CoreCompileInputs.cache
 C:\Users\matteo.iaconis\Desktop\Esercizio-Libri\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\obj\Debug\Esercizio Libri-Gobbi Iaconis.exe
 C:\Users\matteo.iaconis\Desktop\Esercizio-Libri\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\obj\Debug\Esercizio Libri-Gobbi Iaconis.pdb
+C:\Users\utente\Desktop\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\obj\Debug\Esercizio Libri-Gobbi Iaconis.csprojResolveAssemblyReference.cache
+C:\Users\utente\Desktop\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\obj\Debug\MainWindow.g.cs
+C:\Users\utente\Desktop\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\obj\Debug\App.g.cs
+C:\Users\utente\Desktop\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\obj\Debug\Esercizio Libri-Gobbi Iaconis_MarkupCompile.cache
+C:\Users\utente\Desktop\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\obj\Debug\Esercizio Libri-Gobbi Iaconis_MarkupCompile.lref
+C:\Users\utente\Desktop\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\obj\Debug\Esercizio Libri-Gobbi Iaconis.exe
+C:\Users\utente\Desktop\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\obj\Debug\Esercizio Libri-Gobbi Iaconis.pdb
+C:\Users\utente\Desktop\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\bin\Debug\Esercizio Libri-Gobbi Iaconis.exe.config
+C:\Users\utente\Desktop\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\bin\Debug\Esercizio Libri-Gobbi Iaconis.exe
+C:\Users\utente\Desktop\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\bin\Debug\Esercizio Libri-Gobbi Iaconis.pdb
+C:\Users\utente\Desktop\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\obj\Debug\MainWindow.baml
+C:\Users\utente\Desktop\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\obj\Debug\Esercizio Libri-Gobbi Iaconis.g.resources
+C:\Users\utente\Desktop\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\obj\Debug\Esercizio_Libri_Gobbi_Iaconis.Properties.Resources.resources
+C:\Users\utente\Desktop\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\obj\Debug\Esercizio Libri-Gobbi Iaconis.csproj.GenerateResource.cache
+C:\Users\utente\Desktop\Esercizio-Libri\Esercizio Libri-Gobbi Iaconis\Esercizio Libri-Gobbi Iaconis\obj\Debug\Esercizio Libri-Gobbi Iaconis.csproj.CoreCompileInputs.cache

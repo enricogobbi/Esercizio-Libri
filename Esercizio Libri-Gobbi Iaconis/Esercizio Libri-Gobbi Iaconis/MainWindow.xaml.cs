@@ -30,40 +30,61 @@ namespace Esercizio_Libri_Gobbi_Iaconis
 
         private void btnElenco_Click(object sender, RoutedEventArgs e)
         {
-            XDocument xmlLibri = XDocument.Parse(File.ReadAllText(@"C:\Users\enrico.gobbi\Desktop\Esercizio-Libri\libri.xml", System.Text.Encoding.UTF8), LoadOptions.None); //da aggiungere percorso
+            XDocument xmlLibri = XDocument.Parse(File.ReadAllText(@"C:\Users\enrico.gobbi\Desktop\Esercizio-Libri\libri.xml", System.Text.Encoding.UTF8), LoadOptions.None);
 
-            IEnumerable<string> titles =    from libri in xmlLibri.Descendants("wiride")
-                                            select libri.Element("titolo").Value; //element?
+            IEnumerable<string> titles = from libri in xmlLibri.Elements("Biblioteca").Elements("wiride")
+                                         select libri.Element("titolo").Value; //element?
 
+            lstElenco.Items.Clear();
             foreach (string titoli in titles)
                 lstElenco.Items.Add(titoli);
         }
 
         private void btnTitoli_Click(object sender, RoutedEventArgs e)
         {
-            XDocument newAutori;
-            newAutori = XDocument.Load(txtAutore.Text);
+            string autore = txtAutore.Text;
+
+            XDocument xmlLibri = XDocument.Parse(File.ReadAllText(@"C:\Users\enrico.gobbi\Desktop\Esercizio-Libri\libri.xml", System.Text.Encoding.UTF8), LoadOptions.None);
+
+            //Mettere a posto
+            IEnumerable<string> titles = from libri in xmlLibri.Elements("Biblioteca").Elements("wiride")
+                                         where (string)libri.Element("autore").Element("nome").Value/*.ToLower()*/ + " " + (string)libri.Element("autore").Element("cognome")/*.ToLower()*/ == autore/*.ToLower()*/
+                                         select libri.Element("titolo").Value;
+
             lstElenco.Items.Clear();
-            lstElenco.Items.Add("gigi");//non completo
+            foreach (string titoli in titles)
+                lstElenco.Items.Add(titoli);
         }
 
         private void btnCopie_Click(object sender, RoutedEventArgs e)
         {
             string libro = txtLibro.Text;
-            
-            //IEnumerable<>
         }
 
         private void btnGenere_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void btnLibriShort_Click(object sender, RoutedEventArgs e)
         {
-            XDocument newLibri;
-            newLibri = XDocument.Load(txt_Path.Text);
-            newLibri.Save(txtDestination.Text+"\\librishort.xml");
+
+        }
+
+        private void btnRomanzo_Click(object sender, RoutedEventArgs e)
+        {
+            int n = 0;
+
+            XDocument xmlLibri = XDocument.Parse(File.ReadAllText(@"C:\Users\enrico.gobbi\Desktop\Esercizio-Libri\libri.xml", System.Text.Encoding.UTF8), LoadOptions.None);
+
+            IEnumerable<string> romanzo = from libri in xmlLibri.Elements("Biblioteca").Elements("wiride")
+                                          where (string)libri.Element("genere") == "romanzo"
+                                          select libri.Element("titolo").Value;
+
+            lstElenco.Items.Clear();
+            foreach (string numero in romanzo)
+                n++;
+            lblTitRom.Content = n.ToString();
         }
 
         private void btnDeleteAbstract_Click(object sender, RoutedEventArgs e)
@@ -73,6 +94,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             newLibri.Root.>Element().Where().FirstOrDefault().Remove(); //non completo
             MessageBox.Show("tag abstract eliminato. DELETE!");
             newLibri.Save(txt_Path.text); //probabilmente sbagliato SCUSA :(
+            
         }
     }
 }

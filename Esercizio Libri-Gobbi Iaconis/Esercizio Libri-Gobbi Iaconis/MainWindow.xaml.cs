@@ -92,7 +92,20 @@ namespace Esercizio_Libri_Gobbi_Iaconis
 
         private void btnGenere_Click(object sender, RoutedEventArgs e)
         {
+            string libro = txtLibriGen.Text;
+            string newGenere = txtGenere.Text;
+
+            XDocument xmlLibri = XDocument.Parse(File.ReadAllText(txt_Path.Text, System.Text.Encoding.UTF8), LoadOptions.None);
+
+            IEnumerable<XElement> books = from libri in xmlLibri.Elements("Biblioteca").Elements("wiride")
+                                        where (libri.Element("titolo").Value).ToLower() == libro.ToLower()
+                                        select libri.Element("wiride");
+
+            //Da fare
+            xmlLibri.Elements("Biblioteca").Elements("wiride").Where(metodo) = newGenere;
             
+
+            xmlLibri.Save(txt_Path.Text);
         }
 
         private void btnLibriShort_Click(object sender, RoutedEventArgs e)
@@ -109,7 +122,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             XDocument xmlLibri = XDocument.Parse(File.ReadAllText(txt_Path.Text, System.Text.Encoding.UTF8), LoadOptions.None);
 
             IEnumerable<string> romanzo = from libri in xmlLibri.Elements("Biblioteca").Elements("wiride")
-                                          where (string)libri.Element("genere") == "romanzo"
+                                          where (libri.Element("genere")).ToString().Contains("romanzo")
                                           select libri.Element("titolo").Value;
 
             lstElenco.Items.Clear();

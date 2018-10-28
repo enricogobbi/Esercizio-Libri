@@ -102,8 +102,10 @@ namespace Esercizio_Libri_Gobbi_Iaconis
                                         select libri.Element("wiride");
 
             //Da fare
-            xmlLibri.Elements("Biblioteca").Elements("wiride").Where(metodo) = newGenere;
-            
+            //xmlLibri.Elements("Biblioteca").Elements("wiride").Where(metodo) = newGenere;
+            //xmlLibri.Element("Biblioteca").Elements("wiride").Where(x => x.Attribute("titolo").Value == libro).FirstOrDefault().SetElementValue("genere", newGenere);
+            xmlLibri.Elements("Biblioteca").Elements("wiride").Where(x => x.Element("Biblioteca").Element("wiride").Element("titolo").Value == libro).FirstOrDefault().SetElementValue("genere", newGenere);
+
 
             xmlLibri.Save(txt_Path.Text);
         }
@@ -112,6 +114,42 @@ namespace Esercizio_Libri_Gobbi_Iaconis
         {
             XDocument newLibri;
             newLibri = XDocument.Load(txt_Path.Text);
+
+            //Conteggio numero di elementi
+            int n = newLibri.Elements("Biblioteca").Elements("wiride").Count();
+
+            //Ciclo che permette di eseguirlo su ogni elemento dl documento
+            for (int i = 0; i < n; i++)
+            {
+                //Query oer prendere tutti gli elementi
+                IEnumerable<XElement> elementi = from libri in newLibri.Elements("Biblioteca")
+                                                 select libri.Element("wiride");
+
+                //Operazioni fatte su ogni elemento
+                foreach (XElement elemento in elementi)
+                {
+                    //Modifica nome tag "wiride" in "libro"
+                    elemento.Name = "libro";
+
+                    //Eliminazione del primo elemento usando come condizione where una condizione sempre vera
+                    newLibri.Root.Elements().Where(x => x.Value.Contains("")).FirstOrDefault().Remove();
+
+                    //Cancellazione tag su ogni elemento
+                    elemento.SetElementValue("codice_dewey", null);
+                    elemento.Element("autore").SetElementValue("nome", null);
+                    elemento.SetElementValue("genere", null);
+                    elemento.SetElementValue("abstract", null);
+                    
+                    //Aggiunta alla fine dell'elemento appena modificato
+                    newLibri.Element("Biblioteca").Add(elemento);
+
+                    //Salvataggio
+                    newLibri.Save(txtDestination.Text + "\\librishort.xml");
+
+                    //Utilizzata questa procedura in modo da avere sempre come primo elemento l'elemento successivo da modificare
+                }
+            }
+            //Salvataggio
             newLibri.Save(txtDestination.Text + "\\librishort.xml");
         }
 
@@ -139,12 +177,19 @@ namespace Esercizio_Libri_Gobbi_Iaconis
 
         private void btnDeleteAbstract_Click(object sender, RoutedEventArgs e)
         {
-            //XDocument newLibri;
-            //newLibri = XDocument.Load(txt_Path.Text);
-            //newLibri.Root.>Element().Where().FirstOrDefault().Remove(); //non completo
-            //MessageBox.Show("tag abstract eliminato. DELETE!");
-            //newLibri.Save(txt_Path.Text); //probabilmente sbagliato SCUSA :(
-            
+            XDocument newLibri;
+            newLibri = XDocument.Load(txt_Path.Text);
+
+            //Conteggio numero di elementi
+            int n = newLibri.Elements("Biblioteca").Elements("wiride").Count();
+
+            for (int i = 0; i < 60; i++)
+                newLibri.Root.Elements("wiride").Elements("abstract").Where(x => x.Value.Contains("")).FirstOrDefault().Remove();
+
+            //newLibri.Element("Biblioteca").Element("wiride").SetAttributeValue("abstract", null);
+
+            newLibri.Save(txtDestination.Text + "\\libriNoAbstract.xml");
+            MessageBox.Show("tag abstract eliminato");
         }
     }
 }

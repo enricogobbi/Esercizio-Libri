@@ -99,12 +99,14 @@ namespace Esercizio_Libri_Gobbi_Iaconis
 
             IEnumerable<XElement> books = from libri in xmlLibri.Elements("Biblioteca").Elements("wiride")
                                         where (libri.Element("titolo").Value).ToLower() == libro.ToLower()
-                                        select libri.Element("wiride");
+                                          select libri.Element("wiride");
 
-            //Da fare
-            //xmlLibri.Elements("Biblioteca").Elements("wiride").Where(metodo) = newGenere;
-            //xmlLibri.Element("Biblioteca").Elements("wiride").Where(x => x.Attribute("titolo").Value == libro).FirstOrDefault().SetElementValue("genere", newGenere);
-            xmlLibri.Elements("Biblioteca").Elements("wiride").Where(x => x.Element("Biblioteca").Element("wiride").Element("titolo").Value == libro).FirstOrDefault().SetElementValue("genere", newGenere);
+            foreach(XElement book in books)
+            {
+                book.Elements("wiride").Where(x => x.Element("Biblioteca").Element("wiride").Element("titolo").Value == libro).FirstOrDefault().SetElementValue("genere", newGenere);
+            }
+
+           // xmlLibri.Elements("Biblioteca").Elements("wiride").Where(x => x.Element("Biblioteca").Element("wiride").Element("titolo").Value == libro).FirstOrDefault().SetElementValue("genere", newGenere);
 
 
             xmlLibri.Save(txt_Path.Text);

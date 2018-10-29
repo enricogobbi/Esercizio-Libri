@@ -92,22 +92,14 @@ namespace Esercizio_Libri_Gobbi_Iaconis
 
         private void btnGenere_Click(object sender, RoutedEventArgs e)
         {
-            string libro = txtLibriGen.Text;
+            string titLibro = txtLibriGen.Text;
             string newGenere = txtGenere.Text;
 
             XDocument xmlLibri = XDocument.Parse(File.ReadAllText(txt_Path.Text, System.Text.Encoding.UTF8), LoadOptions.None);
 
-            IEnumerable<XElement> books = from libri in xmlLibri.Elements("Biblioteca").Elements("wiride")
-                                        where (libri.Element("titolo").Value).ToLower() == libro.ToLower()
-                                          select libri.Element("wiride");
+            xmlLibri.Root.Elements("wiride").Where(x => x.Element("titolo").Value == titLibro).FirstOrDefault().SetElementValue("genere", newGenere);
 
-            foreach(XElement book in books)
-            {
-                book.Elements("wiride").Where(x => x.Element("Biblioteca").Element("wiride").Element("titolo").Value == libro).FirstOrDefault().SetElementValue("genere", newGenere);
-            }
-
-           // xmlLibri.Elements("Biblioteca").Elements("wiride").Where(x => x.Element("Biblioteca").Element("wiride").Element("titolo").Value == libro).FirstOrDefault().SetElementValue("genere", newGenere);
-
+            MessageBox.Show("Modificato genere del libro \"" + titLibro + "\"");
 
             xmlLibri.Save(txt_Path.Text);
         }

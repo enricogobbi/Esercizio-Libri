@@ -38,7 +38,7 @@
       <cognome>Pirro</cognome>
       <nome>Ugo</nome>
     </autore>
-    <genere></genere>
+    <genere>scienza</genere>
   </wiride>
   <wiride>
     <codice_scheda>M-FKB0GX05</codice_scheda>
@@ -48,7 +48,7 @@
       <cognome>Pizzuto</cognome>
       <nome>Antonio</nome>
     </autore>
-    <genere></genere>
+    <genere>poliziesco</genere>
   </wiride>
   <wiride>
     <codice_scheda>M-FKB0GX06</codice_scheda>

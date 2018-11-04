@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="561" Width="800">
     <Grid Margin="0,0,0,-45">
-        <TextBox x:Name="txt_Path" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="756"/>
+        <TextBox x:Name="txt_Path" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="676"/>
         <Label Content="Indirizzo File Da Consultare:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnElenco" Content="Elenco Completo Libri" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="245" Height="39" FontSize="20" Click="btnElenco_Click"/>
         <Button x:Name="btnTitoli" Content="Cerca Titoli" HorizontalAlignment="Left" Margin="216,146,0,0" VerticalAlignment="Top" Width="86" Height="23" Click="btnTitoli_Click"/>
@@ -31,6 +31,7 @@
         <TextBox x:Name="txtDestination" HorizontalAlignment="Left" Height="23" Margin="11,475,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="605"/>
         <Label Content="\librishort.xml" HorizontalAlignment="Left" Margin="630,475,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnRomanzo" Content="Ricerca Romanzi" HorizontalAlignment="Left" Margin="249,237,0,0" VerticalAlignment="Top" Width="105" Height="26" Click="btnRomanzo_Click"/>
+        <Button x:Name="btn_Sfoglia" Content="Sfoglia" HorizontalAlignment="Left" Margin="691,41,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btn_Sfoglia_Click"/>
 
     </Grid>
 </Window>

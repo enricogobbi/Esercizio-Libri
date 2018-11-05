@@ -29,6 +29,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             InitializeComponent();
         }
 
+        //Bottone per visualizzazione elenco completo
         private void btnElenco_Click(object sender, RoutedEventArgs e)
         {
             XDocument xmlLibri = XDocument.Parse(File.ReadAllText(txt_Path.Text, System.Text.Encoding.UTF8), LoadOptions.None);
@@ -54,6 +55,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             }
         }
 
+        //Bottone per visualizzare titoli di un autore
         private void btnTitoli_Click(object sender, RoutedEventArgs e)
         {
             string autore = txtAutore.Text;
@@ -61,6 +63,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             XDocument xmlLibri = XDocument.Parse(File.ReadAllText(txt_Path.Text, System.Text.Encoding.UTF8), LoadOptions.None);
             try
             {
+                //Query per ricerca titoli di un certo autore
                 IEnumerable<string> titles = from libri in xmlLibri.Elements("Biblioteca").Elements("wiride")
                                              where (libri.Element("autore").Element("nome").Value/*.ToLower()*/ + " " + (string)libri.Element("autore").Element("cognome")).ToLower().Contains(autore.ToLower())///*.ToLower()*/ == autore/*.ToLower()*/
                                              select libri.Element("titolo").Value;
@@ -83,6 +86,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             }
         }
 
+        //Bottone per ricerca numero copie
         private void btnCopie_Click(object sender, RoutedEventArgs e)
         {
             string libro = txtLibro.Text;
@@ -90,6 +94,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             XDocument xmlLibri = XDocument.Parse(File.ReadAllText(txt_Path.Text, System.Text.Encoding.UTF8), LoadOptions.None);
             try
             {
+                //Query per ricavare i libri con un determinato titolo per ricercare il numero di copie
                 IEnumerable<string> books = from libri in xmlLibri.Elements("Biblioteca").Elements("wiride")
                                             where (libri.Element("titolo").Value).ToLower() == libro.ToLower()
                                             select libri.Element("titolo").Value;
@@ -109,6 +114,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             }
         }
 
+        //Bottone per ricerca genere
         private void btnGenere_Click(object sender, RoutedEventArgs e)
         {
             string titLibro = txtLibriGen.Text;
@@ -117,6 +123,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             XDocument xmlLibri = XDocument.Parse(File.ReadAllText(txt_Path.Text, System.Text.Encoding.UTF8), LoadOptions.None);
             try
             {
+                //Modifica del genere
                 xmlLibri.Root.Elements("wiride").Where(x => x.Element("titolo").Value == titLibro).FirstOrDefault().SetElementValue("genere", newGenere);
 
                 MessageBox.Show("Modificato genere del libro \"" + titLibro + "\"");
@@ -129,6 +136,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             }
         }
 
+        //Bottone per creazione del documento librishort.xml
         private void btnLibriShort_Click(object sender, RoutedEventArgs e)
         {
             XDocument newLibri;
@@ -181,6 +189,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             }
         }
 
+        //Bottone per ricerca dei romanzi
         private void btnRomanzo_Click(object sender, RoutedEventArgs e)
         {
             int n = 0;
@@ -188,6 +197,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             XDocument xmlLibri = XDocument.Parse(File.ReadAllText(txt_Path.Text, System.Text.Encoding.UTF8), LoadOptions.None);
             try
             {
+                //Ricerca di tutti i romanzi
                 IEnumerable<string> romanzo = from libri in xmlLibri.Elements("Biblioteca").Elements("wiride")
                                               where (libri.Element("genere")).ToString().Contains("romanzo")
                                               select libri.Element("titolo").Value;
@@ -209,6 +219,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             }
         }
 
+        //Bottone per eliminazione del tag abstract
         private void btnDeleteAbstract_Click(object sender, RoutedEventArgs e)
         {
             XDocument newLibri;
@@ -233,6 +244,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             }
         }
 
+        //Bottone per aprire finestra di selezione del documento xml
         private void btn_Sfoglia_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog selezioneFile = new OpenFileDialog();

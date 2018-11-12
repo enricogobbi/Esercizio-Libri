@@ -199,7 +199,7 @@ namespace Esercizio_Libri_Gobbi_Iaconis
             {
                 //Ricerca di tutti i romanzi
                 IEnumerable<string> romanzo = from libri in xmlLibri.Elements("Biblioteca").Elements("wiride")
-                                              where (libri.Element("genere")).ToString().Contains("romanzo")
+                                              where (libri.Element("genere")).ToString().Contains("romanzo satirico")
                                               select libri.Element("titolo").Value;
 
                 lstElenco.Items.Clear();
